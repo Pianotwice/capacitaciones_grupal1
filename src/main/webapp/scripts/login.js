@@ -7,32 +7,32 @@
 	let password = document.querySelector('.password');
 
 	let helperText = {
-		charLength: document.querySelector('helper-text .largo'),
-		lowercase: document.querySelector('helper-text .minusculas'),
-		uppercase: document.querySelector('helper-text .mayusculas'),
-		special: document.querySelector('helper-text .especial')
+		largo: document.querySelector('helper-text .largo'),
+		minusculas: document.querySelector('helper-text .minusculas'),
+		mayusculas: document.querySelector('helper-text .mayusculas'),
+		especial: document.querySelector('helper-text .especial')
 	};
 })();
 
 password.addEventListener('keyup', function() {
   // Chequeamos que la contraeña contenga por lo menos 8 caracteres
-	patternTest(pattern.charLength(), helperText.charlength);
+	patternTest(pattern.largo(), helperText.largo);
 
   // Chequeamos que la contraseña obtenga por lo menos un caracter con minúsculas
-	patternTest(pattern.lowercase(), helperText.lowercase);
+	patternTest(pattern.minusculas(), helperText.minusculas);
 
   // Chequeamos que la contraseña obtenga por lo menos un caracter con mayúsculas
-	patternTest(pattern.uppercase(), helperText.uppercase);
+	patternTest(pattern.mayusculas(), helperText.mayusculas);
 
   // Chequeamos que la contraseña obtenga por lo menos un caracter especial
-	patternTest(pattern.special(), helperText.special);
+	patternTest(pattern.especial(), helperText.especial);
 
   // Chequeamos que todos los requerimientos se han cumplido
 	if (
-		hasClass(helperText.charlength, 'valid') &&
-		hasClass(helperText.lowercase, 'valid') &&
-		hasClass(helperText.uppercase, 'valid') &&
-		hasClass(helperText.special, 'valid')
+		hasClass(helperText.largo, 'valid') &&
+		hasClass(helperText.minusculas, 'valid') &&
+		hasClass(helperText.mayusculas, 'valid') &&
+		hasClass(helperText.especial, 'valid')
 	) {
     addClass(password.parentElement, 'valid');
   } else {
@@ -41,20 +41,20 @@ password.addEventListener('keyup', function() {
 });
 
 let pattern = {
-  charLength: function() {
+  largo: function() {
     if (password.value.length >= 8) {
       return true;
     }
   },
-  lowercase: function() {
+  minusculas: function() {
     let regex = /^(?=.*[a-z]).+$/; // Patrón de caracteres con minúsculas
     return regex.test(password.value);
   },
-  uppercase: function() {
+  mayusculas: function() {
     let regex = /^(?=.*[A-Z]).+$/; // Patrón de caracteres con mayúsculas
     return regex.test(password.value);
   },
-  special: function() {
+  especial: function() {
     let regex = /^(?=.*[0-9_\W]).+$/; // Pattern for special characters
     return regex.test(password.value);
   }
