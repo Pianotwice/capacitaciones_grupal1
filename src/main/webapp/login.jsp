@@ -77,7 +77,7 @@
         												<input type="password" id="confirmPassword" name="password2" required><br><br>
         												<span id="password-error" style="color: red;"></span>
         												<label for="mail">Correo electrónico:</label>
-        												<input type="text" id="mail" name="mail" required><br><br>
+        												<input type="email" id="mail" name="mail" required><br><br>
         												<input type="submit" value="Submit">
         											</form>
 											</div>
