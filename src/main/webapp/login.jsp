@@ -48,7 +48,7 @@
 										<div class="center-wrap">
 											<div class="section text-center">
 												<h4 class="card-title">Log In</h4>
-    												<form action="Holamundo" method="POST">
+    												<form action="Inicio" method="POST">
         												<label for="username">Usuario:</label>
         												<input type="text" id="username" name="username" required><br><br>
         												<label for="password">Contraseña:</label>
@@ -62,7 +62,7 @@
 										<div class="center-wrap">
 											<div class="section text-center">
 												<h4 class="card-title">Sign up</h4>
-													<form action="Holamundo" method="POST">
+													<form action="Inicio" method="POST">
         												<label for="username">Usuario:</label>
         												<input type="text" id="username" name="username" required><br><br>
         												<label for="password">Contraseña:</label>
